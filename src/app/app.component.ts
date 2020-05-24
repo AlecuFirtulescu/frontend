@@ -9,6 +9,6 @@ import {SensorModel} from '../models/sensor.model';
 export class AppComponent {
   public sensor: SensorModel = {
     name: 'Test sensor',
-    status: true
+    active: false
   };
 }

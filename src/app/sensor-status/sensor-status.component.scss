@@ -1,0 +1,17 @@
+.circle {
+  background: white;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  box-shadow: inset -1px -1px 1px 1px rgba(1, 1, 1, 0.2);
+}
+
+.green-bullet {
+  @extend .circle;
+  background-color: #00e676;
+}
+
+.red-bullet {
+  @extend .circle;
+  background-color: #ff1744;
+}
