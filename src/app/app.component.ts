@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {SensorModel} from '../models/sensor.model';
+import { SensorsService } from '../services/sensors.service';
+import {SensorsResponseModel} from '../models/sensors-response-model';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,11 @@ import {SensorModel} from '../models/sensor.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public sensor: SensorModel = {
-    name: 'Test sensor',
-    active: false
-  };
+
+  public sensorsResponseModel: SensorsResponseModel;
+  constructor(private sensorsService: SensorsService) {
+    sensorsService.getSensors().subscribe((sensorsResponse: SensorsResponseModel) => {
+      this.sensorsResponseModel = sensorsResponse;
+    });
+  }
 }

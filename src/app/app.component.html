@@ -1,1 +1,5 @@
-<app-sensor-status [sensor]="sensor"></app-sensor-status>
+<div *ngFor="let sensor of sensorsResponseModel.sensors">
+  <app-sensor-status [sensor]="sensor">
+  </app-sensor-status>
+</div>
+
