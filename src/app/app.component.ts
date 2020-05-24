@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SensorModel} from '../models/sensor.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend-sensors';
+  public sensor: SensorModel = {
+    name: 'Test sensor',
+    status: true
+  };
 }
