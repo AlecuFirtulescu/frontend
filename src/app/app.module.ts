@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { SensorStatusComponent } from './sensor-status/sensor-status.component';
 import {SensorsService} from '../services/sensors.service';
 import { HttpClientModule} from '@angular/common/http';
+import { WatterTankComponent } from './watter-tank/watter-tank.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { HttpClientModule} from '@angular/common/http';
   ],
   declarations: [
     AppComponent,
-    SensorStatusComponent
+    SensorStatusComponent,
+    WatterTankComponent
   ],
   providers: [
     SensorsService

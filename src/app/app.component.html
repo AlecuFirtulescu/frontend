@@ -1,5 +1,21 @@
-<div *ngFor="let sensor of sensorsResponseModel.sensors">
-  <app-sensor-status [sensor]="sensor">
-  </app-sensor-status>
-</div>
+<div class="content-wrapper">
+  <div>
+    <span class="font-weight-bold"> Sensors </span>
+    <div class="sensors-wrapper">
+      <div *ngFor="let sensor of sensorsResponseModel.sensors">
+        <app-sensor-status [sensor]="sensor">
+        </app-sensor-status>
+      </div>
+    </div>
+  </div>
 
+  <div>
+    <span class="font-weight-bold"> Pumps </span>
+    <div class="sensors-wrapper">
+      <div *ngFor="let pump of sensorsResponseModel.pumps">
+        <app-sensor-status [sensor]="pump">
+        </app-sensor-status>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ export class SensorsService {
 
   public getSensors(): Observable<any> {
     const mockedResponse: SensorsResponseModel = {
+      level: 20,
       sensors: [
         {
           name: 'Test sensor 1',
@@ -40,6 +41,16 @@ export class SensorsService {
           name: 'Test sensor 4',
           active: false
         }
+      ],
+      pumps: [
+        {
+          name: 'Test pump 1',
+          active: true
+        },
+        {
+          name: 'Penis pump',
+          active: true
+        },
       ]
     };
     return of(mockedResponse);
