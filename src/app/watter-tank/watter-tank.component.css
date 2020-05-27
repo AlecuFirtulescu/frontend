@@ -1,0 +1,12 @@
+.watter-lever-container {
+  height: 400px;
+  width: 500px;
+  border: 1px solid black;
+  transform: rotateX(180deg);
+}
+
+.watter-level {
+  bottom: 0px;
+  width: 100%;
+  background-color: aqua;
+}

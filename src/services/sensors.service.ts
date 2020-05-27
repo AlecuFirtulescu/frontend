@@ -10,7 +10,7 @@ export class SensorsService {
 
   public getSensors(): Observable<any> {
     const mockedResponse: SensorsResponseModel = {
-      level: 20,
+      level: 5,
       sensors: [
         {
           name: 'Test sensor 1',
@@ -54,5 +54,8 @@ export class SensorsService {
       ]
     };
     return of(mockedResponse);
+
+    const url: string = 'aiciVineURL';
+    return this.httpClient.get<SensorsResponseModel>(url);
   }
 }
