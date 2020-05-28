@@ -8,54 +8,8 @@ export class SensorsService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getSensors(): Observable<any> {
-    const mockedResponse: SensorsResponseModel = {
-      level: 5,
-      sensors: [
-        {
-          name: 'Test sensor 1',
-          active: true
-        },
-        {
-          name: 'Test sensor 1',
-          active: true
-        },        {
-          name: 'Test sensor 1',
-          active: true
-        },        {
-          name: 'Test sensor 1',
-          active: true
-        },        {
-          name: 'Test sensor 1',
-          active: true
-        },
-        {
-          name: 'Test sensor 2',
-          active: false
-        },
-        {
-          name: 'Test sensor 3',
-          active: true
-        },
-        {
-          name: 'Test sensor 4',
-          active: false
-        }
-      ],
-      pumps: [
-        {
-          name: 'Test pump 1',
-          active: true
-        },
-        {
-          name: 'Penis pump',
-          active: true
-        },
-      ]
-    };
-    return of(mockedResponse);
-
-    const url: string = 'aiciVineURL';
+  public getSensors(): Observable<SensorsResponseModel> {
+    const url: string = 'http://172.20.1.1:5000/getdata';
     return this.httpClient.get<SensorsResponseModel>(url);
   }
 }
