@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SensorsService } from '../services/sensors.service';
 import {SensorsResponseModel} from '../models/sensors-response-model';
+import {interval} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,10 @@ export class AppComponent {
 
   public sensorsResponseModel: SensorsResponseModel;
   constructor(private sensorsService: SensorsService) {
-    sensorsService.getSensors().subscribe((sensorsResponse: SensorsResponseModel) => {
-      this.sensorsResponseModel = sensorsResponse;
+    interval(1000).subscribe(() => {
+      this.sensorsService.getSensors().subscribe((sensorsResponse: SensorsResponseModel) => {
+        this.sensorsResponseModel = sensorsResponse;
+      });
     });
   }
 }
